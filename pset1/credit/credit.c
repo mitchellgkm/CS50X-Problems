@@ -35,7 +35,7 @@ int main(void)
 
     if (lu == 1 && (n == 34 || n == 37) && len == 15) //Self explanatory
 
-    {
+    {def 
         printf("AMEX\n");
     }
     else if (lu == 1 && n / 10 == 4 && (len == 13 || len == 16))
