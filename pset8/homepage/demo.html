@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>JS Demo</title>
+    </head>
+    <body>
+
+<div class="container pagediv">
+    <div id="headerpicdiv">
+        <image id="headerpic" src="crop_pp.png">
+    </div>
+
+    <section id="navbarsection">
+
+            <div class = "navbar-div">
+    <nav
+      class="navbar navbar-expand-md"
+      style="color: #0f0f0f;"
+    >
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav">
+            <li><a href="index.html"  class="nav-item nav-link">Home</a></li>
+
+            <li><a href="wow.html"  class="nav-item nav-link">WoW</a></li>
+
+            <li><a href="fanpage.html"  class="nav-item nav-link">Fanpage</a></li>
+
+            <li><a href="demo.html"  class="nav-item nav-link">Demo</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+    </section>
+
+    <div class="textdiv">
+        <h1>Here's a super simple demonstration of the power of vanilla JavaScript</h1>
+    <h3>Check out what the buttons below can do to the lovely phrase here:</h3>
+    </div>
+    <div>
+
+      <h1 id="helloworld">Hello, world!</h1>
+
+</div>
+
+<div class="buttondiv" id="colourbuttons">
+  <label for="red" class="buttonitem">Change colour: </label>
+  <button class="btn btn-primary buttonitem" id="red">Red</button>
+  <button class="btn btn-primary buttonitem" id="blue">Blue</button>
+  <button class="btn btn-primary buttonitem" id="green">Green</button>
+  <button class="btn btn-primary buttonitem" id="black">Black</button>
+</div>
+
+<div class="buttondiv" id="sizebuttons">
+  <label for="small" class="buttonitem">Change size: </label>
+  <button class="btn btn-primary buttonitem" id="1rem">Small</button>
+  <button class="btn btn-primary buttonitem" id="2rem">Medium</button>
+  <button class="btn btn-primary buttonitem" id="4rem">Large</button>
+  <button class="btn btn-primary buttonitem" id="3rem">Default</button>
+</div>
+
+<div class="buttondiv" id="fontbuttons">
+  <label for="cs" class="buttonitem">Change font: </label>
+  <button class="btn btn-primary buttonitem" id="cs">Comic Sans</button>
+  <button class="btn btn-primary buttonitem" id="imp">Impact</button>
+  <button class="btn btn-primary buttonitem" id="tnr">Times New Roman</button>
+  <button class="btn btn-primary buttonitem" id="arial">Arial</button>
+</div>
+
+
+
+
+    <div id="toplinkdiv">
+<a href="#headerpicdiv">Return to top</a>
+</div>
+
+    </div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+        <script>
+
+        hello = document.getElementById("helloworld")
+
+        document.getElementById("colourbuttons").addEventListener("click", (event) => {
+
+  const isButton = event.target.nodeName === "BUTTON";
+  if (!isButton) {
+    return;
+  }
+
+  colour = (document.getElementById(event.target.id).id);
+  hello.style.color = colour;
+
+        });
+
+                document.getElementById("sizebuttons").addEventListener("click", (event) => {
+
+  const isButton = event.target.nodeName === "BUTTON";
+  if (!isButton) {
+    return;
+  }
+
+  size = (document.getElementById(event.target.id).id);
+  hello.style.fontSize = size;
+
+        });
+
+  document.getElementById("fontbuttons").addEventListener("click", (event) => {
+
+  const isButton = event.target.nodeName === "BUTTON";
+  if (!isButton) {
+    return;
+  }
+
+
+// Object mapping
+  var obj = {
+        cs: function() {
+      hello.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
+    },
+        imp: function() {
+      hello.style.fontFamily = "Impact, Charcoal, sans-serif";
+    },
+        tnr: function() {
+      hello.style.fontFamily = "'Times New Roman', Times, serif";
+    },
+        arial: function() {
+      hello.style.fontFamily =  "Arial, serif";
+    }
+  }
+
+  obj[event.target.id]();
+
+        });
+
+        </script>
+    </body>
+</html>
