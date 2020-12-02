@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block body %}
+      <h1>Hello, please enter your name</h1>
+
+      <form action="/hello">
+          <input name="name" type="text">
+          <input type="submit">
+      </form>
+{% endblock %}
